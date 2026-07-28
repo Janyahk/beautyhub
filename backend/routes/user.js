@@ -1,4 +1,4 @@
-import { registerUser, loginUser,getUsers,deleteUser,updateUserRole } from "../controllers/userController.js";
+import { registerUser, loginUser,getUsers,deleteUser,updateUserRole } from "../Controllers/userController.js";
 import express from "express";
 import { protect, authorizeRoles } from "../middleware/authMiddleware.js";
 
