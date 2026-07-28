@@ -1,0 +1,32 @@
+
+@import "tailwindcss";
+body {
+background-color: #f3f4f6; /* instead of @apply */
+  font-family: sans-serif;
+}
+
+@keyframes scrollX {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll-x {
+  animation: scrollX 60s linear infinite;
+}
+.animate-scroll-x:hover {
+  animation-play-state: paused;
+}
+
+/* Hide scrollbar but allow scroll */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE & Edge */
+  scrollbar-width: none;     /* Firefox */
+}
