@@ -11,7 +11,7 @@ import Services from "./pages/Services";
 import Courses from "./pages/Courses";
 import Booking from "./pages/Booking";
 import Gallery from "./pages/Gallery";
-import Footer from "./components/footer";
+import Footer from "./components/Footer";
 // Admin Pages
 import AdminDashboard from "./pages/Admin/AdminDashboard";
 import ManageUsers from "./pages/Admin/ManageUsers";
