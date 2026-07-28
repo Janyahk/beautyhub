@@ -5,7 +5,7 @@ import {
   getMyEnrollments
 } from "../Controllers/enrollmentController.js";
 import { protect, authorizeRoles } from "../middleware/authMiddleware.js";
-import { updatePaymentStatus } from "../controllers/enrollmentController.js";
+import { updatePaymentStatus } from "../Controllers/enrollmentController.js";
 
 const router = express.Router();
 
