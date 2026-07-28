@@ -5,7 +5,7 @@ import {
   updateService,
   deleteService,
   getServiceById
-} from "../controllers/serviceController.js";
+} from "../Controllers/serviceController.js";
 import { protect, authorizeRoles } from "../middleware/authMiddleware.js";
 
 const router = express.Router();

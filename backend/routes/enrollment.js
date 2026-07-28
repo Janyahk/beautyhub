@@ -3,7 +3,7 @@ import {
   enrollCourse,
   getEnrollments,
   getMyEnrollments
-} from "../controllers/enrollmentController.js";
+} from "../Controllers/enrollmentController.js";
 import { protect, authorizeRoles } from "../middleware/authMiddleware.js";
 import { updatePaymentStatus } from "../controllers/enrollmentController.js";
 

@@ -4,7 +4,7 @@ import {
   getCourses,
   updateCourse,
   deleteCourse
-} from "../controllers/courseController.js";
+} from "../Controllers/courseController.js";
 import { protect, authorizeRoles } from "../middleware/authMiddleware.js";
 
 const router = express.Router();
