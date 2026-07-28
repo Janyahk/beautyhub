@@ -21,7 +21,7 @@ const [message, setMessage] = useState("");
   const handleSubmit = async () => {
     try{
       console.log(form);
-    await axios.post("http://localhost:5000/api/register", form);
+    await axios.post(`${import.meta.env.VITE_API_URL}/register`, form);
    setIsSuccess(true);
       setMessage("✅ Registration successful! Redirecting to Login...");
        setForm({

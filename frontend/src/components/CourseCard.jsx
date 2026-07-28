@@ -13,7 +13,7 @@ const CourseCard = ({ course }) => {
       }
 
       await axios.post(
-        "http://localhost:5000/api/enrollments",
+        `${import.meta.env.VITE_API_URL}/enrollments`,
         {
           courseId: course._id,
         },

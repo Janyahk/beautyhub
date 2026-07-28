@@ -14,7 +14,7 @@ const ManageEnrollments = () => {
     const fetchEnrollments = async () => {
       try {
         const res = await axios.get(
-          "http://localhost:5000/api/enrollments",
+          `${import.meta.env.VITE_API_URL}/enrollments`,
           {
             headers: {
               Authorization: token,
@@ -36,7 +36,7 @@ const ManageEnrollments = () => {
   const handleTogglePayment = async (id) => {
     try {
       const res = await axios.put(
-        `http://localhost:5000/api/enrollments/${id}`,
+        `${import.meta.env.VITE_API_URL}/enrollments/${id}`,
         {},
         {
           headers: {

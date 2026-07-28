@@ -15,7 +15,7 @@ const Services = () => {
         const token = localStorage.getItem("token");
 
         const res = await axios.get(
-          "http://localhost:5000/api/services",
+          `${import.meta.env.VITE_API_URL}/services`,
           {
             headers: {
               Authorization: token,

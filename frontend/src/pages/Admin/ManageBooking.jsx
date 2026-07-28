@@ -18,7 +18,7 @@ const ManageBookings = () => {
     const fetchBookings = async () => {
       try {
         const res = await axios.get(
-          "http://localhost:5000/api/bookings",
+          `${import.meta.env.VITE_API_URL}/bookings`,
           {
             headers: {
               Authorization: token,
@@ -41,7 +41,7 @@ const ManageBookings = () => {
   const handleUpdate = async (id) => {
     try {
       const res = await axios.put(
-        `http://localhost:5000/api/bookings/${id}`,
+        `${import.meta.env.VITE_API_URL}/bookings/${id}`,
         {
           date: newDate,
         },
@@ -70,7 +70,7 @@ const ManageBookings = () => {
   const handleDelete = async (id) => {
     try {
       await axios.delete(
-        `http://localhost:5000/api/bookings/${id}`,
+        `${import.meta.env.VITE_API_URL}/bookings/${id}`,
         {
           headers: {
             Authorization: token,

@@ -9,7 +9,7 @@ const Gallery = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/gallery")
+      .get(`${import.meta.env.VITE_API_URL}/gallery`)
       .then((res) => setImages(res.data))
       .catch((err) => console.log(err));
   }, []);

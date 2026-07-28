@@ -12,7 +12,7 @@ const ManageUsers = () => {
   // Fetch Users
   const fetchUsers = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/users", {
+      const res = await axios.get(`${import.meta.env.VITE_API_URL}/users`, {
         headers: {
           Authorization: token,
         },
@@ -33,7 +33,7 @@ const ManageUsers = () => {
     if (!window.confirm("Are you sure you want to delete this user?")) return;
 
     try {
-      await axios.delete(`http://localhost:5000/api/users/${id}`, {
+      await axios.delete(`${import.meta.env.VITE_API_URL}/users/${id}`, {
         headers: {
           Authorization: token,
         },
@@ -49,7 +49,7 @@ const ManageUsers = () => {
   const changeRole = async (id, role) => {
     try {
       await axios.put(
-        `http://localhost:5000/api/users/${id}`,
+        `${import.meta.env.VITE_API_URL}/users/${id}`,
         { role },
         {
           headers: {

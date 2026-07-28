@@ -16,7 +16,7 @@ const Booking = () => {
 
     if (!service) {
       axios
-        .get(`http://localhost:5000/api/services/${id}`, {
+        .get(`${import.meta.env.VITE_API_URL}/services/${id}`, {
           headers: {
             Authorization: token,
           },
@@ -31,7 +31,7 @@ const Booking = () => {
       const token = localStorage.getItem("token");
 
       await axios.post(
-        "http://localhost:5000/api/bookings",
+        `${import.meta.env.VITE_API_URL}/bookings`,
         {
           serviceId: id,
           date,

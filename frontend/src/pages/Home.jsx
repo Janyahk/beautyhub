@@ -16,17 +16,17 @@ const Home = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/gallery")
+      .get(`${import.meta.env.VITE_API_URL}/gallery`)
       .then((res) => setImages(res.data))
       .catch(console.log);
 
     axios
-      .get("http://localhost:5000/api/services")
+      .get(`${import.meta.env.VITE_API_URL}/services`)
       .then((res) => setServices(res.data))
       .catch(console.log);
 
     axios
-      .get("http://localhost:5000/api/courses")
+      .get(`${import.meta.env.VITE_API_URL}/courses`)
       .then((res) => setCourses(res.data))
       .catch(console.log);
   }, []);

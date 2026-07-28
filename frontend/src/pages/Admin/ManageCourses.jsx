@@ -22,7 +22,7 @@ const ManageCourses = () => {
   // Fetch Courses
   const fetchCourses = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/courses");
+      const res = await axios.get(`${import.meta.env.VITE_API_URL}/courses`);
       setCourses(res.data);
     } catch (err) {
       console.log(err);
@@ -49,7 +49,7 @@ const ManageCourses = () => {
 
       if (editId) {
         await axios.put(
-          `http://localhost:5000/api/courses/${editId}`,
+          `${import.meta.env.VITE_API_URL}/courses/${editId}`,
           payload,
           {
             headers: {
@@ -61,7 +61,7 @@ const ManageCourses = () => {
         setEditId(null);
       } else {
         await axios.post(
-          "http://localhost:5000/api/courses",
+          "${import.meta.env.VITE_API_URL}/courses",
           payload,
           {
             headers: {
@@ -90,7 +90,7 @@ const ManageCourses = () => {
   const deleteCourse = async (id) => {
     try {
       await axios.delete(
-        `http://localhost:5000/api/courses/${id}`,
+        `${import.meta.env.VITE_API_URL}/courses/${id}`,
         {
           headers: {
             Authorization: token,

@@ -23,19 +23,19 @@ const AdminDashboard = () => {
     const fetchStats = async () => {
       try {
         const responses = await Promise.allSettled([
-          axios.get("http://localhost:5000/api/users", {
+          axios.get(`${import.meta.env.VITE_API_URL}/users`, {
             headers: { Authorization: token },
           }),
-          axios.get("http://localhost:5000/api/services", {
+          axios.get(`${import.meta.env.VITE_API_URL}/services`, {
             headers: { Authorization: token },
           }),
-          axios.get("http://localhost:5000/api/courses", {
+          axios.get(`${import.meta.env.VITE_API_URL}/courses`, {
             headers: { Authorization: token },
           }),
-          axios.get("http://localhost:5000/api/bookings", {
+          axios.get(`${import.meta.env.VITE_API_URL}/bookings`, {
             headers: { Authorization: token },
           }),
-          axios.get("http://localhost:5000/api/enrollments", {
+          axios.get(`${import.meta.env.VITE_API_URL}/enrollments`, {
             headers: { Authorization: token },
           }),
         ]);

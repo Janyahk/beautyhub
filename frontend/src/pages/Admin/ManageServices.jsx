@@ -20,7 +20,7 @@ const ManageServices = () => {
   // Fetch Services
   const fetchServices = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/services");
+      const res = await axios.get(`${import.meta.env.VITE_API_URL}/services`);
       setServices(res.data);
     } catch (err) {
       console.log(err.response?.data || err.message);
@@ -51,7 +51,7 @@ const ManageServices = () => {
 
       if (editId) {
         await axios.put(
-          `http://localhost:5000/api/services/${editId}`,
+          `${import.meta.env.VITE_API_URL}/services/${editId}`,
           payload,
           {
             headers: {
@@ -63,7 +63,7 @@ const ManageServices = () => {
         setEditId(null);
       } else {
         await axios.post(
-          "http://localhost:5000/api/services",
+          "${import.meta.env.VITE_API_URL}/services",
           payload,
           {
             headers: {
@@ -91,7 +91,7 @@ const ManageServices = () => {
   const deleteService = async (id) => {
     try {
       await axios.delete(
-        `http://localhost:5000/api/services/${id}`,
+        `${import.meta.env.VITE_API_URL}/services/${id}`,
         {
           headers: {
             Authorization: token,

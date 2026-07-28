@@ -13,7 +13,7 @@ const ManageGallery = () => {
   // Fetch Images
   const fetchImages = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/gallery");
+      const res = await axios.get("${import.meta.env.VITE_API_URL}/gallery");
       setImages(res.data);
     } catch (err) {
       console.log(err);
@@ -33,7 +33,7 @@ const ManageGallery = () => {
       }
 
       await axios.post(
-        "http://localhost:5000/api/gallery",
+        `${import.meta.env.VITE_API_URL}/gallery`,
         {
           image_url: imageUrl,
         },
@@ -56,7 +56,7 @@ const ManageGallery = () => {
   const handleDelete = async (id) => {
     try {
       await axios.delete(
-        `http://localhost:5000/api/gallery/${id}`,
+        `${import.meta.env.VITE_API_URL}/gallery/${id}`,
         {
           headers: {
             Authorization: token,

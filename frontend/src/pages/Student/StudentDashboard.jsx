@@ -20,10 +20,10 @@ const StudentDashboard = () => {
         };
 
         const [enrollRes, bookingRes] = await Promise.all([
-          axios.get("http://localhost:5000/api/my-enrollments", {
+          axios.get(`${import.meta.env.VITE_API_URL}/my-enrollments`, {
             headers,
           }),
-          axios.get("http://localhost:5000/api/my-bookings", {
+          axios.get(`${import.meta.env.VITE_API_URL}/my-bookings`, {
             headers,
           }),
         ]);

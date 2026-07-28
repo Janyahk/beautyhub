@@ -17,7 +17,7 @@ const MyBookings = () => {
   const fetchBookings = async () => {
     try {
       const res = await axios.get(
-        "http://localhost:5000/api/my-bookings",
+        `${import.meta.env.VITE_API_URL}/my-bookings`,
         {
           headers: {
             Authorization: token,
@@ -40,7 +40,7 @@ const MyBookings = () => {
 
     try {
       await axios.delete(
-        `http://localhost:5000/api/bookings/${id}`,
+        `${import.meta.env.VITE_API_URL}/bookings/${id}`,
         {
           headers: {
             Authorization: token,
